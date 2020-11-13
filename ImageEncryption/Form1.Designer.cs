@@ -42,9 +42,12 @@
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button6 = new System.Windows.Forms.Button();
+            this.alpha = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -180,11 +183,44 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
+            // alpha
+            // 
+            this.alpha.Location = new System.Drawing.Point(340, 68);
+            this.alpha.Maximum = new decimal(new int[] {
+            7096,
+            0,
+            0,
+            0});
+            this.alpha.Minimum = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            this.alpha.Name = "alpha";
+            this.alpha.Size = new System.Drawing.Size(120, 20);
+            this.alpha.TabIndex = 15;
+            this.alpha.Value = new decimal(new int[] {
+            1024,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(298, 75);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "آلفا:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1432, 749);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.alpha);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label4);
@@ -204,6 +240,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.alpha)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +262,8 @@
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.NumericUpDown alpha;
+        private System.Windows.Forms.Label label3;
     }
 }
 
