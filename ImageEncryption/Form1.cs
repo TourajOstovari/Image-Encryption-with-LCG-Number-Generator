@@ -17,7 +17,7 @@ namespace ImageEncryption
         {
             LCG.lst.Clear();
             Bitmap bitmap = new Bitmap(pictureBox1.Image);
-            //LCG.LCG_(Code, (long)(Code * numericUpDown1.Value), (long)(Code + numericUpDown1.Value), (bitmap.Width));
+            LCG.LCG_(Code, (long)(Code * numericUpDown1.Value), (long)(Code + numericUpDown1.Value), (bitmap.Width));
             Random number = new Random((int)(Code + numericUpDown1.Value * alpha.Value));
             for (int i = 0; i < bitmap.Height; i++)
             {
@@ -26,10 +26,13 @@ namespace ImageEncryption
                     Color c = bitmap.GetPixel(i2, i);
                     long temp = number.Next(0, (int)alpha.Value);
                     byte r = (byte)(c.R ^ temp);
+                    r = (byte)(r ^ LCG.lst[i2]);
                     temp = number.Next(0, (int)alpha.Value);
                     byte g = (byte)(c.G ^ temp);
+                    g = (byte)(g ^ LCG.lst[i2]);
                     temp = number.Next(0, (int)alpha.Value);
                     byte b = (byte)(c.B ^ temp);
+                    b = (byte)(b ^ LCG.lst[i2]);
                     c = Color.FromArgb(r, g, b);
                     bitmap.SetPixel(i2, i, c);
 
@@ -42,7 +45,7 @@ namespace ImageEncryption
         {
             Bitmap bitmap = new Bitmap(pictureBox1.Image);
             LCG.lst.Clear();
-            //LCG.LCG_(Code, (long)(Code * numericUpDown1.Value), (long)(Code + numericUpDown1.Value), (bitmap.Width));
+            LCG.LCG_(Code, (long)(Code * numericUpDown1.Value), (long)(Code + numericUpDown1.Value), (bitmap.Width));
             Random number = new Random((int)(Code + numericUpDown1.Value * alpha.Value));
             for (int i = 0; i < bitmap.Height; i++)
             {
@@ -51,10 +54,13 @@ namespace ImageEncryption
                     Color c = bitmap.GetPixel(i2, i);
                     long temp = number.Next(0, (int)alpha.Value);
                     byte r = (byte)(c.R ^ temp);
+                    r = (byte)(r ^ LCG.lst[i2]);
                     temp = number.Next(0, (int)alpha.Value);
                     byte g = (byte)(c.G ^ temp);
+                    g = (byte)(g ^ LCG.lst[i2]);
                     temp = number.Next(0, (int)alpha.Value);
                     byte b = (byte)(c.B ^ temp);
+                    b = (byte)(b ^ LCG.lst[i2]);
                     c = Color.FromArgb(r, g, b);
                     bitmap.SetPixel(i2, i, c);
                 }
