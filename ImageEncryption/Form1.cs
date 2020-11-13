@@ -18,7 +18,7 @@ namespace ImageEncryption
             LCG.lst.Clear();
             Bitmap bitmap = new Bitmap(pictureBox1.Image);
             //LCG.LCG_(Code, (long)(Code * numericUpDown1.Value), (long)(Code + numericUpDown1.Value), (bitmap.Width));
-            Random number = new Random((int)(Code * numericUpDown1.Value * alpha.Value));
+            Random number = new Random((int)(Code + numericUpDown1.Value * alpha.Value));
             for (int i = 0; i < bitmap.Height; i++)
             {
                 for (int i2 = 0; i2 < bitmap.Width; i2++)
@@ -43,7 +43,7 @@ namespace ImageEncryption
             Bitmap bitmap = new Bitmap(pictureBox1.Image);
             LCG.lst.Clear();
             //LCG.LCG_(Code, (long)(Code * numericUpDown1.Value), (long)(Code + numericUpDown1.Value), (bitmap.Width));
-            Random number = new Random((int)(Code * numericUpDown1.Value * alpha.Value));
+            Random number = new Random((int)(Code + numericUpDown1.Value * alpha.Value));
             for (int i = 0; i < bitmap.Height; i++)
             {
                 for (int i2 = 0; i2 < bitmap.Width; i2++)
